@@ -1,9 +1,11 @@
 import { Router } from 'express';
-import { libros } from './controller.js';
+import { libro } from './librosController.js';
 
 export const router = Router()
 
-router.get('/libros', libros.getAll);
-router.post('/libros', libros.add);
-router.delete('/libros', libros.delete);
-router.put('/libros', libros.update);
+router.get('/libro', libro.getAll);
+router.post('/añadir-libro', libro.add);
+router.delete('/eliminar-libro-id', libro.deleteId);
+router.delete('/eliminar-libro-ISBN', libro.deleteISBN);
+router.put('/editar-libro', libro.update);
+router.get('/libro', libro.getOne);

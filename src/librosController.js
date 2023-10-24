@@ -7,19 +7,24 @@ class librosController{
     }
     
     async add(req, res){
-        const libros = req.body;
-        const [result] = await pool.query(`INSERT INTO libros (nombre, autor, categoria, año_publicacion, isbn) VALUES (?,?,?,?,?)`[libro.nombre, libro.autor, libro.categoria, libro.año_publicacion, libro.isbn]);
+        const libro = req.body;
+        const [result] = await pool.query(`INSERT INTO libros (nombre, autor, categoria, año_publicacion, ISBN) VALUES (?,?,?,?,?)`[libro.nombre, libro.autor, libro.categoria, libro.año_publicacion, libro.ISBN]);
         res.json({"Id insertado": result.insertId});
     }
 
     async delete(req,res){
-        const libros = req.body;
+        const libro = req.body;
         const [result] = await pool.query(`DELETE FROM libros WHERE id=(?)`, [libro.id]);
         res.json ({"Registros eliminados": result.affectedRows});
     }
+    async delete(req,res){
+        const libro = req.body;
+        const [result] = await pool.query(`DELETE FROM libros WHERE isbn=(?)`, [libro.isbn]);
+        res.json ({"Registros eliminados": result.affectedRows});
+    }
     async update(req, res){
-        const libros = req.body;
-        const [result] = await pool.query (`UPDATE libros SET nombre=(?), autor=(?), categoria=(?), año_publicacion=(?), isbn=(?) WHERE id=(?)`, [libro.nombre, libro.autor, libro.categoria, libro.año_publicacion, libro.isbn]);
+        const libro = req.body;
+        const [result] = await pool.query (`UPDATE libros SET nombre=(?), autor=(?), categoria=(?), año_publicacion=(?), isbn=(?) WHERE id=(?)`, [libro.nombre, libro.autor, libro.categoria, libro.año_publicacion, libro.isbn, libro.id]);
         res.json ({"Registros actualizados": result.changedRows});
     }
     async getOne(req, res) {
@@ -28,7 +33,7 @@ class librosController{
             const id_libro=parseInt(libro.id);
             const [result]= await pool.query('select * from libros where id=?'
              [id_libro]);
-        //convierto el resultado en un json. Si existe el atributo id, entonces no sera nudo //en caso contrario, si lo será. Si no es nulo, retorno el resultado, sino, retorne //el mensaje de error.
+        //convierto el resultado en un json. Si existe el atributo id, entonces no sera nulo //en caso contrario, si lo será. Si no es nulo, retorno el resultado, sino, retorne //el mensaje de error.
         if (result[0]!=undefined){ 
             res.json(result);
         }else{
@@ -39,9 +44,6 @@ class librosController{
         console.log(e);
         }
     }
-
 }
 
-export const libros = new librosController();
-
-
+export const libro = new librosController();
