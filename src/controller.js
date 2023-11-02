@@ -25,8 +25,15 @@ class LibrosController{
     }
 
     async add(req, res){
-    try {    
         const libro = req.body;
+        //fix subida de atributos inválidos
+        const listaAtributos = ['nombre', 'autor', 'categoria', 'añoPublicacion', 'ISBN'];
+        const atributosExtra = Object.keys(libro).filter(attr => !listaAtributos.includes(attr));
+
+        if (atributosExtra.length > 0) {
+            return res.json({ error: `Atributos invalidos: ${atributosExtra.join(' , ')}`});
+        }
+        try {    
         const [result] = await pool.query(`INSERT INTO Libros (nombre, autor, categoria, añoPublicacion, ISBN) VALUES (?,?,?,?,?)`[libro.nombre, libro.autor, libro.categoria, libro.añoPublicacion, libro.ISBN]);
         res.json({ "ID insertado": result.insertId, "message": "Libro insertado exitosamente" });
     } catch (error){
