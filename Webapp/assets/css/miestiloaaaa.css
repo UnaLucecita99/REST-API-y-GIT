@@ -1,0 +1,126 @@
+
+body {
+ background-color: #ff0789;
+ color: #ff0789;
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+}
+
+.header{
+text-align: center;
+font-weight: bold;
+font-style: italic;
+}
+.acercade{
+  text-align: justify;
+  color: #ff0789;
+  max-width: 800px;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+.text{
+text-align: center;
+color: Pink
+}
+
+header {
+ font-size: 40px;
+ font-weight: bold;
+ font-style: oblique;
+ background-color: Pink;
+ color: #fff;
+ text-align: center;
+ padding: 20px;
+}
+.carrusel{
+  text-align: center;
+  color: #ff0789;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+}
+/* Estilos para el nav y enlaces de ul y li */
+nav {
+ background-color: #ff0789;
+ padding: 10px;
+}
+
+nav ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ text-align: center;
+}
+
+nav ul li {
+ display: inline-block;
+ margin-right: 20px;
+}
+
+nav ul li a {
+ color: #ff0789;
+ text-decoration: none;
+ padding: 8px 16px;
+ border-radius: 5px;
+}
+
+nav ul li a:hover {
+ background-color: #ff0789;
+}
+
+btn-button{
+  background-color: #ff0789;
+  border-color: #ff0789;
+}
+btn-button:hover{
+background-color: #ff0789;
+border-color: #ff0789;
+}
+.card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+}
+
+.forma{
+  margin: 0 auto;
+  float: none;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  border: 3px solid Pink; /* Contorno de 3px con un color blanco (#fff) alrededor de la img.*/
+  border-radius: 10px; /* Borde redondeado de 10px para suavizar el contorno */
+  border-width: medium;
+  }
+section {
+ padding: 20px; /* espaciado para la sección de 20 pixeles */}
+
+footer {
+ text-align: center;
+ background-color: Pink; /* Color de fondo del footer */
+ color: #fff;
+ padding: 20px 0; }
+
+.footer-content {
+ max-width: 800px; /* Ancho máximo del contenido del footer */
+ margin: 0 auto; /* Centrar el contenido del footer horizontalmente */
+ text-align: center; }
+
+ /* Estilos para las imágenes */
+.logo {
+ display: block; /* Para eliminar el espacio adicional que algunos navegadores agregan a las img. */
+ margin: 0 auto; /* Centrar las imágenes horizontalmente */
+ max-width: 100%; /* Asegurar que las imágenes no excedan el ancho del contenedor */
+ border: 3px solid #fff; /* Contorno de 3px con un color blanco (#fff) alrededor de la img.*/
+ border-radius: 10px; /* Borde redondeado de 10px para suavizar el contorno */
+}
+
+.unne {
+ size: 10px;
+ display: block; /* Para eliminar el espacio adicional que algunos navegadores agregan a las img. */
+ margin: 0 auto; /* Centrar las imágenes horizontalmente */
+ max-width: 15%; /* Asegurar que las imágenes no excedan el ancho del contenedor */
+ border: 3px solid #fff; /* Contorno de 3px con un color blanco (#fff) alrededor de la img.*/
+ border-radius: 10px; /* Borde redondeado de 10px para suavizar el contorno */
+}
